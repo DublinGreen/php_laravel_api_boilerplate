@@ -1,7 +1,7 @@
 # INSTALL DOCKER, BUILD AND RUN CONTAINERS
  With docker installed on your machine, run the docker build command
 
->> docker-compose build && docker-composer up -d 
+>> docker-compose build && docker-compose up -d 
 
 # HOW TO RUN MIGRATIONs AND SEEDERS
 >> php artisan migrate:refresh --seed
