@@ -500,6 +500,7 @@ class ComposerStaticInit49dc23dd1f5bdc484e485174d53a33fd
     public static $classMap = array (
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Enums\\AdminStatus' => __DIR__ . '/../..' . '/app/Enums/AdminStatus.php',
+        'App\\Enums\\MarketingStatus' => __DIR__ . '/../..' . '/app/Enums/MarketingStatus.php',
         'App\\Enums\\RememberTokenStatus' => __DIR__ . '/../..' . '/app/Enums/RememberTokenStatus.php',
         'App\\Enums\\SexStatus' => __DIR__ . '/../..' . '/app/Enums/SexStatus.php',
         'App\\Events\\Event' => __DIR__ . '/../..' . '/app/Events/Event.php',

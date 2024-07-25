@@ -8,6 +8,7 @@ $baseDir = dirname($vendorDir);
 return array(
     'App\\Console\\Kernel' => $baseDir . '/app/Console/Kernel.php',
     'App\\Enums\\AdminStatus' => $baseDir . '/app/Enums/AdminStatus.php',
+    'App\\Enums\\MarketingStatus' => $baseDir . '/app/Enums/MarketingStatus.php',
     'App\\Enums\\RememberTokenStatus' => $baseDir . '/app/Enums/RememberTokenStatus.php',
     'App\\Enums\\SexStatus' => $baseDir . '/app/Enums/SexStatus.php',
     'App\\Events\\Event' => $baseDir . '/app/Events/Event.php',
