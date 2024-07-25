@@ -9,12 +9,12 @@ docker compose build app && docker compose up -d
 
 # INSTALL APPLICATION dependencies
 ```
-docker-compose exec app rm -rf vendor composer.lock && docker-compose exec app composer install
+docker compose exec app rm -rf vendor composer.lock && docker compose exec app composer install
 ``` 
 
 # HOW TO RUN MIGRATIONs AND SEEDERS
 ```
-docker-compose exec app php artisan migrate:refresh --seed
+docker compose exec app php artisan migrate:refresh --seed
 ```
 
 # HOW TO RUN API
@@ -24,7 +24,7 @@ If the containers were setup properly, we should be able to see the base url at
 # RUN UNIT TESTS
 Before running test update the TEST_TOKEN in the .env
 ```
-docker-compose exec app php vendor/bin/phpunit
+docker compose exec app php vendor/bin/phpunit
 ```
 
 # CHECK RUNNING CONTAINERS
