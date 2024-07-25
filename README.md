@@ -13,8 +13,7 @@ A lumen application with docker containers for php, mysql and nginx. Using migra
 >> docker-compose exec app php artisan migrate:refresh --seed
 
 # HOW TO RUN API
->> php -S localhost:8000 -t public
-At running the command. Visit the url on your browser
+If the containers were setup properly, we should be able to see the base url at
 [a link] (http://localhost:8000/)
 
 # CHECK RUNNING CONTAINERS
