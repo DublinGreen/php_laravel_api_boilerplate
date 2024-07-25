@@ -3,11 +3,10 @@ A lumen application with docker containers for php, mysql and nginx. Using migra
 
 # INSTALL DOCKER, BUILD AND RUN CONTAINERS
  With docker installed on your machine, run the docker build command
->> 
 ```
 docker compose build app && docker compose up -d 
 ```
- 
+
 # INSTALL APPLICATION dependencies
 >> docker-compose exec app rm -rf vendor composer.lock
 >> docker-compose exec app composer install 
