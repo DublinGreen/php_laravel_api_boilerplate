@@ -3,8 +3,11 @@ A lumen application with docker containers for php, mysql and nginx. Using migra
 
 # INSTALL DOCKER, BUILD AND RUN CONTAINERS
  With docker installed on your machine, run the docker build command
-
->> docker-compose build && docker-compose up -d 
+>> docker compose build app && docker compose up -d 
+ 
+# INSTALL APPLICATION dependencies
+>> docker-compose exec app rm -rf vendor composer.lock
+>> docker-compose exec app composer install 
 
 # HOW TO RUN MIGRATIONs AND SEEDERS
 >> php artisan migrate:refresh --seed
@@ -14,6 +17,11 @@ A lumen application with docker containers for php, mysql and nginx. Using migra
 At running the command. Visit the url on your browser
 [a link] (http://localhost:8000/)
 
+# CHECK RUNNING CONTAINERS
+>> docker ps
+
+# HOW TO STOP DOCKER CONTAINERS
+>> docker compose down
 
 # Swagger Documentation using swagger editor
 visit the link below

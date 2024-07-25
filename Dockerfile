@@ -32,12 +32,8 @@ RUN mkdir -p /home/$user/.composer && \
 WORKDIR /var/www
 
 RUN pecl config-set php_ini "${PHP_INI_DIR}/php.ini"
-# RUN pecl install mcrypt-1.0.1 \
-#     && docker-php-ext-enable mcrypt;
+
+# Install PHP extensions
+RUN docker-php-ext-install pdo_mysql mbstring exif pcntl bcmath gd
 
 USER $user
-
-#RUN composer update
-
-CMD php artisan serve --host=0.0.0.0
-EXPOSE 8000
