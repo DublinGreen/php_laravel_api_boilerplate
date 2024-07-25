@@ -12,10 +12,6 @@ At running the command. Visit the url on your browser
 [a link] (http://localhost:8000/)
 
 
-# Buckhill Project Documentation
-[a link] (https://buckhill.atlassian.net/wiki/spaces/BR/pages/2359525423/Fullstack+Developer+Task+Pet+Shop#The-Recommended)
-
-
 # Swagger Documentation using swagger editor
 visit the link below
 [a link] (https://editor.swagger.io/)

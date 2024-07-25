@@ -31,18 +31,6 @@ class UserController extends Controller
         }
     }
 
-    public function orders($id)
-    {
-        $obj = Order::Where('user_id', $id)->get();
-
-        if(!empty($obj)){
-            return response(['data' => $obj, 'message' => "get user orders", 'status' => true, 'statusCode' => env('HTTP_SERVER_CODE_OK')]);
-        }else{
-            return response(['data' => [], 'message' => 'unable to get user orders', 'status' => false, 'statusCode' => env('HTTP_SERVER_CODE_BAD_REQUEST')]);
-        }
-        
-    }
-
     public function create(Request $request)
     {
 
