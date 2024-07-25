@@ -8,35 +8,44 @@ docker compose build app && docker compose up -d
 ```
 
 # INSTALL APPLICATION dependencies
->> docker-compose exec app rm -rf vendor composer.lock
->> docker-compose exec app composer install 
+```
+docker-compose exec app rm -rf vendor composer.lock && docker-compose exec app composer install
+``` 
 
 # HOW TO RUN MIGRATIONs AND SEEDERS
->> docker-compose exec app php artisan migrate:refresh --seed
+```
+docker-compose exec app php artisan migrate:refresh --seed
+```
 
 # HOW TO RUN API
 If the containers were setup properly, we should be able to see the base url at
 [a link] (http://localhost:8000/)
 
 # CHECK RUNNING CONTAINERS
->> docker ps
+```
+docker ps
+```
 
 # HOW TO STOP DOCKER CONTAINERS 
->> docker compose down
+```
+docker compose down
+```
 
 # HOW TO FIND IP in use
->> docker inspect -f '{{.Name}} - {{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' $(docker ps -aq)
+```
+docker inspect -f '{{.Name}} - {{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' $(docker ps -aq)
+```
 
 # Swagger Documentation using swagger editor
 visit the link below
 [a link] (https://editor.swagger.io/)
 Change servers/url to match base api url, then load up /openapi.yaml
 
-
 # RUN UNIT TESTS
 Before running test update the TEST_TOKEN in the .env
->> php vendor/bin/phpunit
-
+```
+docker-compose exec app php vendor/bin/phpunit
+```
 
 # Lumen PHP Framework
 
