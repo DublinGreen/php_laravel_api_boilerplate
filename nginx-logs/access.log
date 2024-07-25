@@ -39,3 +39,4 @@
 172.22.0.1 - - [25/Jul/2024:04:37:18 +0000] "GET / HTTP/1.1" 200 52 "-" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36"
 172.22.0.1 - - [25/Jul/2024:04:37:23 +0000] "POST /api/v1/user/login HTTP/1.1" 200 464 "-" "PostmanRuntime/7.37.3"
 172.22.0.1 - - [25/Jul/2024:04:37:58 +0000] "GET /api/v1/user/1 HTTP/1.1" 200 467 "-" "PostmanRuntime/7.37.3"
+172.22.0.1 - - [25/Jul/2024:04:40:55 +0000] "GET / HTTP/1.1" 200 52 "-" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36"

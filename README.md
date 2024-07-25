@@ -19,8 +19,11 @@ If the containers were setup properly, we should be able to see the base url at
 # CHECK RUNNING CONTAINERS
 >> docker ps
 
-# HOW TO STOP DOCKER CONTAINERS
+# HOW TO STOP DOCKER CONTAINERS 
 >> docker compose down
+
+# HOW TO FIND IP in use
+>> docker inspect -f '{{.Name}} - {{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' $(docker ps -aq)
 
 # Swagger Documentation using swagger editor
 visit the link below
