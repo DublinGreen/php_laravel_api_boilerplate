@@ -18,13 +18,16 @@ use App\Http\Middleware\Authenticate;
 |
 */
 
+// Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
+//     return $request->user();
+// });
+
 $router->get('/', function () use ($router) {
     return $router->app->version();
 });
 
 Route::post(env('PREFIX') . 'user/login', 'UserController@login');
 Route::get(env('PREFIX') . 'user/logout', 'UserController@logout');
-
 
 Route::group(['prefix'=> env('PREFIX'),'as'=>'user.','middleware' => ['auth']], function(){
     Route::get('user', 'UserController@index');
@@ -34,4 +37,5 @@ Route::group(['prefix'=> env('PREFIX'),'as'=>'user.','middleware' => ['auth']], 
     Route::post('user/create', 'UserController@create');
     Route::post('user/forgot-password', 'UserController@forgotPassword');
     Route::post('user/reset-password-token', 'UserController@resetPasswordToken');
+
 });

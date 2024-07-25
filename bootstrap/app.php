@@ -62,6 +62,7 @@ $app->singleton(
 */
 
 $app->configure('app');
+// $app->configure('swagger-lume');
 
 /*
 |--------------------------------------------------------------------------
@@ -76,6 +77,10 @@ $app->configure('app');
 
 $app->routeMiddleware([
     'auth' => App\Http\Middleware\Authenticate::class,
+]);
+
+$app->middleware([
+    App\Http\Middleware\CorsMiddleware::class
 ]);
 
 /*

@@ -42,6 +42,9 @@ docker compose down
 docker inspect -f '{{.Name}} - {{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' $(docker ps -aq)
 ```
 
+
+# USING NGROK TO TUNNEL LOCAL IP
+
 # Swagger Documentation using swagger editor
 visit the link below
 [a link] (https://editor.swagger.io/)
