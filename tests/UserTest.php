@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Config;
 
 class UserTest extends TestCase
 {
-
+    private $token = null;
     /**
      * A basic test example.
      *
@@ -37,12 +37,12 @@ class UserTest extends TestCase
 
     public function test_user_login_with_input(): void
     {
-        
-        $payload = ['email' => 'greendublin007@gmail.com','password' => 'Steeldubs0077!@#'];
+        $payload = ['email' => env('TEST_USER_EMAIL'),'password' => env('TEST_USER_PASSWORD')];
 
         $this->json('POST', 'api/v1/user/login', $payload);
         $data = json_decode($this->response->getContent(), true);
         Config::set('TEST_TOKEN', $data['data']['token']);
+        $this->token = $data['data']['token'];
 
         $this->assertArrayHasKey('message', $data);
         $this->assertArrayHasKey('status', $data);
@@ -64,6 +64,12 @@ class UserTest extends TestCase
 
     public function test_user_with_token(): void
     {
+        $payload = ['email' => env('TEST_USER_EMAIL'),'password' => env('TEST_USER_PASSWORD')];
+        $this->json('POST', 'api/v1/user/login', $payload);
+        $data = json_decode($this->response->getContent(), true);
+        Config::set('TEST_TOKEN', $data['data']['token']);
+        $this->token = $data['data']['token'];
+
         $token = env('TEST_TOKEN');
         $this->get('api/v1/user',['Authorization' => 'Bearer ' . $token]);
         $data = json_decode($this->response->getContent(), true);
@@ -77,6 +83,12 @@ class UserTest extends TestCase
 
     public function test_single_user_with_token(): void
     {
+        $payload = ['email' => env('TEST_USER_EMAIL'),'password' => env('TEST_USER_PASSWORD')];
+        $this->json('POST', 'api/v1/user/login', $payload);
+        $data = json_decode($this->response->getContent(), true);
+        Config::set('TEST_TOKEN', $data['data']['token']);
+        $this->token = $data['data']['token'];
+
         $token = env('TEST_TOKEN');
         $this->get('api/v1/user/1', ['Authorization' => 'Bearer ' . $token]);
         $data = json_decode($this->response->getContent(), true);
@@ -90,20 +102,14 @@ class UserTest extends TestCase
 
     public function test_delete_user_with_token(): void
     {
+        $payload = ['email' => env('TEST_USER_EMAIL'),'password' => env('TEST_USER_PASSWORD')];
+        $this->json('POST', 'api/v1/user/login', $payload);
+        $data = json_decode($this->response->getContent(), true);
+        Config::set('TEST_TOKEN', $data['data']['token']);
+        $this->token = $data['data']['token'];
+        
         $token = env('TEST_TOKEN');
         $this->delete('api/v1/user/3', ['Authorization' => 'Bearer ' . $token]);
-        $data = json_decode($this->response->getContent(), true);
-
-        $this->assertArrayHasKey('data', $data);
-        $this->assertArrayHasKey('message', $data);
-        $this->assertArrayHasKey('status', $data);
-        $this->assertArrayHasKey('statusCode', $data);
-    }
-
-    public function test_user_orders_with_token(): void
-    {
-        $token = env('TEST_TOKEN');
-        $this->get('api/v1/user/1', ['Authorization' => 'Bearer ' . $token]);
         $data = json_decode($this->response->getContent(), true);
 
         $this->assertArrayHasKey('data', $data);
