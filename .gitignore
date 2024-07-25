@@ -1,6 +1,7 @@
 .env
 /bootstrap/compiled.php
 /vendor/
+/nginx-logs/
 composer.phar
 composer.lock
 **/logs
