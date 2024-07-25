@@ -1,5 +1,7 @@
 .env
 /bootstrap/compiled.php
-/vendor
+/vendor/
 composer.phar
 composer.lock
+**/logs
+*.log
