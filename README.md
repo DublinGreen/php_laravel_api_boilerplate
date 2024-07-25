@@ -10,7 +10,7 @@ A lumen application with docker containers for php, mysql and nginx. Using migra
 >> docker-compose exec app composer install 
 
 # HOW TO RUN MIGRATIONs AND SEEDERS
->> php artisan migrate:refresh --seed
+>> docker-compose exec app php artisan migrate:refresh --seed
 
 # HOW TO RUN API
 >> php -S localhost:8000 -t public

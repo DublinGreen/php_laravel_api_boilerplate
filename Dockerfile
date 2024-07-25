@@ -37,3 +37,6 @@ RUN pecl config-set php_ini "${PHP_INI_DIR}/php.ini"
 RUN docker-php-ext-install pdo_mysql mbstring exif pcntl bcmath gd
 
 USER $user
+
+CMD [ "sh", "-c", "php src/init.php" ]
+
