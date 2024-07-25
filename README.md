@@ -42,13 +42,21 @@ docker compose down
 docker inspect -f '{{.Name}} - {{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' $(docker ps -aq)
 ```
 
-
-# USING NGROK TO TUNNEL LOCAL IP
-
 # Swagger Documentation using swagger editor
+I am using ngrok to tunnel the local IP, so visit 
+[a link] (https://ngrok.com/) signup and install engine on your machine, Lastly please add authtoken to machine
+
+Use the command 
+```
+ngrok http http://localhost:8080
+```
+
+to create the tunnel so the swagger editor can receive response from the public url provided by ngrok
+Open the ./openapi.yaml file and change public url under servers > url to the public url provider by ngrok
+
 visit the link below
 [a link] (https://editor.swagger.io/)
-Change servers/url to match base api url, then load up /openapi.yaml
+Then load up /openapi.yaml
 
 # Lumen PHP Framework
 
