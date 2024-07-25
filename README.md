@@ -1,3 +1,6 @@
+# LUMEN API BOILERPLATE
+A lumen application with docker containers for php, mysql and nginx. Using migration and seeders. User basic routes with JWT configurations and Bearer token for protected routes.
+
 # INSTALL DOCKER, BUILD AND RUN CONTAINERS
  With docker installed on your machine, run the docker build command
 
