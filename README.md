@@ -21,6 +21,12 @@ docker-compose exec app php artisan migrate:refresh --seed
 If the containers were setup properly, we should be able to see the base url at
 [a link] (http://localhost:8000/)
 
+# RUN UNIT TESTS
+Before running test update the TEST_TOKEN in the .env
+```
+docker-compose exec app php vendor/bin/phpunit
+```
+
 # CHECK RUNNING CONTAINERS
 ```
 docker ps
@@ -40,12 +46,6 @@ docker inspect -f '{{.Name}} - {{range .NetworkSettings.Networks}}{{.IPAddress}}
 visit the link below
 [a link] (https://editor.swagger.io/)
 Change servers/url to match base api url, then load up /openapi.yaml
-
-# RUN UNIT TESTS
-Before running test update the TEST_TOKEN in the .env
-```
-docker-compose exec app php vendor/bin/phpunit
-```
 
 # Lumen PHP Framework
 
